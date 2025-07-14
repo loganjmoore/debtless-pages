@@ -41,27 +41,155 @@
     strong {
       color: #2c3e50;
     }
+    .contact-form {
+      background-color: #f8f9fa;
+      padding: 30px;
+      border-radius: 12px;
+      border: 2px solid #e9ecef;
+      margin: 20px 0;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .success-message {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #c3e6cb;
+      margin-top: 20px;
+      display: none;
+    }
   </style>
 </head>
 <body>
   <h1>Debtless App Support</h1>
   <p>Thank you for using Debtless!</p>
   
-  <h2>Contact</h2>
-  <p>If you have questions, feedback, or need help, please email: <a href="mailto:your@email.com">your@email.com</a></p>
+  <h2>Contact Us</h2>
+  <p>Have a question, feedback, or need help? Fill out the form below and we'll get back to you as soon as possible.</p>
+  
+  <div class="contact-form">
+    <form action="https://formspree.io/f/mldlryev" method="POST">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject" required>
+          <option value="">Select a topic...</option>
+          <option value="General Question">General Question</option>
+          <option value="Bug Report">Bug Report</option>
+          <option value="Feature Request">Feature Request</option>
+          <option value="Support Request">Support Request</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Please describe your question or issue..." required></textarea>
+      </div>
+      
+      <button type="submit">Send Message</button>
+    </form>
+    
+    <div class="success-message" id="success-message">
+      Thank you! Your message has been sent. We'll get back to you soon.
+    </div>
+  </div>
   
   <h2>FAQ</h2>
   <ul>
     <li><strong>How do I reset my data?</strong> Delete and reinstall the app.</li>
-    <li><strong>How do I request a feature?</strong> Email us at the address above!</li>
+    <li><strong>How do I request a feature?</strong> Use the contact form above!</li>
     <li><strong>Is my data secure?</strong> Yes! All your data is stored locally on your device and never transmitted to external servers.</li>
     <li><strong>Can I backup my data?</strong> Your data is automatically backed up with iCloud if you have iCloud enabled on your device.</li>
-    <li><strong>How do I report a bug?</strong> Please email us with details about the issue you're experiencing.</li>
+    <li><strong>How do I report a bug?</strong> Please use the contact form above with details about the issue you're experiencing.</li>
   </ul>
   
   <h2>Privacy</h2>
   <p>Learn about how we protect your privacy: <a href="privacy.html">Privacy Policy</a></p>
   
   <p><a href="index.html">← Back to Home</a></p>
+
+  <script>
+    // Handle form submission
+    const form = document.querySelector('form');
+    const successMessage = document.getElementById('success-message');
+    
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(form);
+      
+      // Submit to Formspree
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Show success message
+          form.style.display = 'none';
+          successMessage.style.display = 'block';
+          form.reset();
+        } else {
+          alert('There was an error sending your message. Please try again.');
+        }
+      })
+      .catch(error => {
+        alert('There was an error sending your message. Please try again.');
+      });
+    });
+  </script>
 </body>
 </html> 
