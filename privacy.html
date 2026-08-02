@@ -32,33 +32,115 @@
     strong {
       color: #e74c3c;
     }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 16px 0;
+    }
+    th, td {
+      border: 1px solid #e9ecef;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #f8f9fa;
+    }
+    .callout {
+      background-color: #f8f9fa;
+      border-left: 4px solid #3498db;
+      padding: 12px 16px;
+      margin: 20px 0;
+    }
   </style>
 </head>
 <body>
   <h1>Privacy Policy for Debtless</h1>
-  <p><strong>Effective Date:</strong> December 19, 2024</p>
-  
-  <h2>1. Information Collection</h2>
-  <p>Debtless does <strong>not</strong> collect, store, or transmit any personal information or data from users. All data you enter (debts, savings goals, etc.) is stored <strong>locally on your device</strong> and is not shared with anyone, including the developer.</p>
-  
-  <h2>2. In-App Purchases</h2>
-  <p>Debtless uses Apple's in-app purchase system for optional "Tip the Developer" features. All payment processing is handled securely by Apple. The app does not access or store any payment information.</p>
-  
-  <h2>3. Analytics & Tracking</h2>
-  <p>Debtless does <strong>not</strong> use any analytics, advertising, or tracking services.</p>
-  
-  <h2>4. Data Security</h2>
-  <p>Your data never leaves your device unless you back it up using iCloud or your own device backup. The app does not transmit any data to external servers.</p>
-  
-  <h2>5. Children's Privacy</h2>
-  <p>Debtless is not intended for children under the age of 13. No personal information is knowingly collected from children.</p>
-  
-  <h2>6. Changes to This Policy</h2>
-  <p>If this privacy policy changes, the updated policy will be made available in the app and on this page.</p>
-  
-  <h2>7. Contact</h2>
-  <p>If you have any questions about this privacy policy, please contact: <a href="mailto:your@email.com">your@email.com</a></p>
-  
+  <p><strong>Effective Date:</strong> August 2, 2026</p>
+
+  <div class="callout">
+    <p><strong>The short version.</strong> Debtless keeps your debts on your device. It has no user accounts, and it never connects to your bank. The one time your debt information leaves your device is when <em>you</em> use an AI feature — the Coach, the statement Scanner, or Earn More — because those features are processed on a server. That is described in detail in section 2.</p>
+  </div>
+
+  <h2>1. Information You Enter</h2>
+  <p>Everything Debtless knows about your finances is information you typed in or scanned yourself: debt names, balances, interest rates (APR), minimum payments, due dates, payment history, and savings goals.</p>
+  <p>Debtless does <strong>not</strong> connect to your bank, and does not ask for bank logins, card numbers, or account numbers. There are no user accounts and no sign-up.</p>
+  <p>This information is stored on your device. It is not uploaded to us for storage, and we have no database of your debts.</p>
+  <p>Please do not type account numbers, passwords, PINs, or Social Security numbers into debt names or notes. Debtless does not need them.</p>
+
+  <h2>2. AI Features — When Information Leaves Your Device</h2>
+  <p>Debtless includes three optional features that are processed on a server rather than on your phone. Each one runs only when you choose to use it:</p>
+
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>What is sent when you use it</th>
+    </tr>
+    <tr>
+      <td><strong>Coach</strong> (chat and payoff recommendations)</td>
+      <td>Your active debts — names, balances, APRs, minimum payments and due dates — the amount you say you can put toward debt each month, your chosen payoff strategy, and the messages you write in the chat.</td>
+    </tr>
+    <tr>
+      <td><strong>Scan a statement</strong></td>
+      <td>The photo or screenshot you choose. These images typically contain your creditor's name, your balance, and your APR.</td>
+    </tr>
+    <tr>
+      <td><strong>Earn More</strong></td>
+      <td>The skills, availability, constraints, city/state and items-to-sell you enter in the Earn profile, plus your total debt, your number of active debts, and the name and balance of your smallest debt.</td>
+    </tr>
+  </table>
+
+  <p>These requests are sent over an encrypted (HTTPS) connection to our processing service, which passes them to a third-party AI provider to generate the response. We do not use your debt information for advertising, we do not sell it, and we do not build a profile from it.</p>
+  <p>If you never use these three features, your debt information stays on your device.</p>
+
+  <h2>3. Anonymous Device Registration</h2>
+  <p>So that the AI features can be rate-limited without accounts, Debtless generates a random identifier for your installation and registers it with our service when the app first starts. This identifier is a random value created on your device. It is not your name, your email, your phone number, or an Apple advertising identifier, and it is not linked to your debt information.</p>
+  <p>Deleting the app and reinstalling it produces a new identifier.</p>
+
+  <h2>4. Usage Statistics</h2>
+  <p>Debtless records a small log of feature usage — for example, that a debt was created, that a reminder was enabled, or that an export was started. <strong>This log stays on your device and is never uploaded to us.</strong></p>
+  <p>It never contains debt names, balances, APRs, payment amounts, due dates, or payoff dates. You can turn it off in Settings → Privacy.</p>
+
+  <h2>5. Crash Diagnostics</h2>
+  <p>If Debtless crashes, it writes a technical report (the error and the stack trace) to your device. It is shown in Settings so that you can copy it and send it to us if you choose to. <strong>It is not transmitted automatically.</strong> Apple may also provide us with anonymised crash statistics if you have enabled sharing with developers in your iOS settings; that sharing is controlled by Apple and by you, not by us.</p>
+
+  <h2>6. Advertising and Tracking</h2>
+  <p>Debtless does not include an advertising SDK, does not track you across other apps or websites, and does not use Apple's advertising identifier. Debtless does not show third-party ads.</p>
+
+  <h2>7. Purchases</h2>
+  <p>Debtless Pro is sold through Apple's in-app purchase system. Apple handles the payment; we never see or store your payment details. Purchases are not linked to your debt information.</p>
+
+  <h2>8. Notifications</h2>
+  <p>Payment reminders are optional and are scheduled entirely on your device. Nothing is sent to a server to deliver them.</p>
+  <p>Please be aware that reminder text currently includes the debt name and the payment amount, and that iOS may display notification text on your Lock Screen and on connected devices such as an Apple Watch or CarPlay. You can turn reminders off for all debts in Settings, or for an individual debt when editing it.</p>
+
+  <h2>9. Widgets and Apple Watch</h2>
+  <p>If you use the Debtless widget or the Apple Watch companion, the app writes a summary of your debts — including debt names and balances — into shared storage on your device so those surfaces can display it. This shared storage stays on your device.</p>
+
+  <h2>10. Spotlight Search</h2>
+  <p>Debtless adds your debts to your device's Spotlight search index by <em>name only</em>, so you can find them from Home Screen search. Balances, APRs and payment amounts are not placed in the search index.</p>
+
+  <h2>11. Device Backups</h2>
+  <p>Debtless data is stored in the app's normal storage, which means <strong>it is included in your device backups</strong>. If you back your iPhone up to iCloud or to a computer, your debt information is included in that backup, and it can be restored onto a new device.</p>
+  <p>Those backups are created and controlled by Apple and by your device settings — not by us. We cannot read them. You can exclude Debtless from iCloud backup in iOS Settings → your name → iCloud → Manage Storage.</p>
+
+  <h2>12. Exporting Your Data</h2>
+  <p>Settings → Export Data creates CSV files of your debts and payments and hands them to the iOS share sheet so you can save or send them wherever you choose. <strong>These CSV files are not encrypted and are not password-protected</strong> — anyone who can open the file can read your balances. We never receive a copy; where the file goes is entirely up to you.</p>
+
+  <h2>13. Deleting Your Data</h2>
+  <p>Settings → Erase All Data permanently deletes your debts, payment history, savings goals, coach conversation, usage log, widget data, temporary exports, and the identifier described in section 3. This cannot be undone.</p>
+  <p>Deleting the app from your device also removes its stored data.</p>
+  <p>Neither action reaches copies that have already left the app: backups taken before the erase, and any export files you have already shared, remain wherever they are until you delete them yourself.</p>
+
+  <h2>14. Children's Privacy</h2>
+  <p>Debtless is not intended for children under 13, and we do not knowingly collect information from children.</p>
+
+  <h2>15. Changes to This Policy</h2>
+  <p>If we add anything that collects or transmits additional information, we will update this policy before that change ships, and update the effective date above.</p>
+
+  <h2>16. Contact</h2>
+  <p>Privacy questions can be sent through the <a href="support.html">Debtless support page</a>.</p>
+
   <p><a href="index.html">← Back to Home</a></p>
 </body>
-</html> 
+</html>
